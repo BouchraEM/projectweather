@@ -1,0 +1,36 @@
+.containerCity {
+  color: blue;
+  font-weight: bold;
+}
+.containerCurrent {
+  color: #006ec5;
+  font-size: 24px;
+}
+#weatheremoji {
+  font-size: 100px;
+}
+.currentT {
+  font-size: 80px;
+}
+#buttonCF {
+  font-size: 20px;
+  vertical-align: bottom;
+}
+#colSide {
+  font-size: 20px;
+}
+.ContainerWeek {
+  font-size: 18px;
+}
+.containerWeekemoji {
+  font-size: 18px;
+}
+.containerDegrees {
+  font-size: 20px;
+}
+.card {
+  margin: 50px auto;
+}
+.card-body {
+  padding: 30px;
+}
