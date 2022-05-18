@@ -34,3 +34,10 @@
 .card-body {
   padding: 30px;
 }
+p {
+  font-size: small;
+  font-family: monospace;
+}
+a {
+  color: #006ec5;
+}
