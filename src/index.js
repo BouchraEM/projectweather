@@ -64,14 +64,17 @@ function showTemprature(response) {
   let cityResult = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
-  //let weatherEm = response.data.weather[0].icon;
-  // let weatherEmoji = document.querySelector("#weatherEmoji");
+  let weatherEm = response.data.weather[0].icon;
   let searchedCity = document.querySelector("#runCity");
   let descriptionElement = document.querySelector("#weather-description");
   let tempratureElement = document.querySelector("#currentTemprature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#windSpeed");
-  //weatherEmoji.innerHTML = weatherEm;
+  let weatherEmoji = document.querySelector("#weatherEmoji");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherEm}@2x.png`
+  );
   tempratureElement.innerHTML = temprature;
   descriptionElement.innerHTML = description;
   searchedCity.innerHTML = cityResult;
