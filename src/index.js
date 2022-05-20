@@ -6,7 +6,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let months = [
     "januari",
@@ -20,7 +20,7 @@ function formatDate(date) {
     "september",
     "october",
     "november",
-    "december"
+    "december",
   ];
   let now = new Date();
   let hours = now.getHours();
