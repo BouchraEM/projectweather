@@ -30,14 +30,23 @@
 }
 .card {
   margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
 }
 .card-body {
   padding: 30px;
 }
-p {
+.source {
   font-size: small;
   font-family: monospace;
+  display: block;
 }
 a {
   color: #006ec5;
+}
+.WeatherForecast {
+  text-align: center;
+  margin: 40px 0;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 50px;
 }
