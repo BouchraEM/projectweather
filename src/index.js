@@ -79,7 +79,7 @@ function showTemprature(response) {
   descriptionElement.innerHTML = description;
   searchedCity.innerHTML = cityResult;
   humidityElement.innerHTML = `${humidity}%`;
-  windElement.innerHTML = `${wind} Km h`;
+  windElement.innerHTML = `${wind} `;
   celsiusTemprature = Math.round(response.data.main.temp);
   //console.log(response);
 }
