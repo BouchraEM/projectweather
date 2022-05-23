@@ -64,7 +64,7 @@ function showTemprature(response) {
   let cityResult = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
-  let weatherEm = response.data.weather[0].icon;
+  celsiusTemprature = Math.round(response.data.main.temp);
   let searchedCity = document.querySelector("#runCity");
   let descriptionElement = document.querySelector("#weather-description");
   let tempratureElement = document.querySelector("#currentTemprature");
@@ -80,7 +80,6 @@ function showTemprature(response) {
   searchedCity.innerHTML = cityResult;
   humidityElement.innerHTML = `${humidity}%`;
   windElement.innerHTML = `${wind} `;
-  celsiusTemprature = Math.round(response.data.main.temp);
   //console.log(response);
 }
 
@@ -106,6 +105,9 @@ function showPosition(position) {
 function fahrenheitDegrees(event) {
   event.preventDefault();
   let fahrenheit = document.querySelector("#currentTemprature");
+  //remove celsiusbutton
+  celciusButton.classList.remove("active");
+  fahrenheitButton.classList.add("active");
   let fahTemp = Math.round((celsiusTemprature * 9) / 5 + 32);
   fahrenheit.innerHTML = `${fahTemp}`;
 }
@@ -113,12 +115,16 @@ function celsiusDegrees(event) {
   event.preventDefault();
   let celcius = document.querySelector("#currentTemprature");
   celcius.innerHTML = celsiusTemprature;
+  celciusButton.classList.add("active");
+  fahrenheitButton.classList.remove("active");
 }
 // dit is voor Cbuuton
-let celsiusTemprature = null;
+let celsiusTemprature = "00";
+
 //dit moet enkel v eranderen als ik op F druk
 let fahrenheitButton = document.querySelector("#buttonF");
 fahrenheitButton.addEventListener("click", fahrenheitDegrees);
+
 // hier willen wij eigenlkijk buttonC automatisch verbinden aan function ShowTemprature
 let celciusButton = document.querySelector("#buttonC");
 celciusButton.addEventListener("click", celsiusDegrees);
