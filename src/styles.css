@@ -1,42 +1,52 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fcd6d5;
-}
-
-li {
-  list-style: none;
-}
-h1 {
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+.containerCity {
+  color: blue;
   font-weight: bold;
-  color: black;
 }
-.weather-app-wrapper {
+.containerCurrent {
+  color: #006ec5;
+  font-size: 24px;
+}
+#weatheremoji {
+  font-size: 100px;
+}
+.currentT {
+  font-size: 80px;
+}
+#buttonCF {
+  font-size: 20px;
+  vertical-align: bottom;
+}
+#colSide {
+  font-size: 20px;
+}
+.ContainerWeek {
+  font-size: 18px;
+}
+.containerWeekemoji {
+  font-size: 18px;
+}
+.containerDegrees {
+  font-size: 20px;
+}
+.card {
+  margin: 50px auto;
   max-width: 600px;
-  margin: 30px auto;
-}
-
-.weather-app {
   padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 10px;
-  background-color: #fff;
 }
-
-.overview {
+.card-body {
+  padding: 30px;
+}
+.source {
+  font-size: small;
   font-family: monospace;
-  font-size: 18px;
-  color: gray;
+  display: block;
 }
-.current-temp {
-  font-size: 50px;
+a {
+  color: #006ec5;
 }
-.emoji-row .unit {
-  position: fixed;
-}
-.humWind {
-  font-family: monospace;
-  font-size: 18px;
-  color: gray;
+.WeatherForecast {
+  text-align: center;
+  margin: 40px 0;
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 50px;
 }
