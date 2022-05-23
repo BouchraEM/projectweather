@@ -22,7 +22,7 @@ function formatDate(date) {
     "november",
     "december",
   ];
-  let now = new Date();
+  let now = new Date(date);
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
