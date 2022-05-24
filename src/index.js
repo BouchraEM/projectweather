@@ -142,7 +142,7 @@ function displayForecast() {
           </div>
     </div>`;
   });
-  forecastHTML = `</div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
