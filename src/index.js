@@ -158,3 +158,5 @@ celciusButton.addEventListener("click", celsiusDegrees);
 
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", currentPosition);
+
+displayForecast();
