@@ -80,6 +80,7 @@ function showTemprature(response) {
   searchedCity.innerHTML = cityResult;
   humidityElement.innerHTML = `${humidity}%`;
   windElement.innerHTML = `${wind} `;
+  displayForecast();
   //console.log(response);
 }
 
@@ -158,5 +159,3 @@ celciusButton.addEventListener("click", celsiusDegrees);
 
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", currentPosition);
-
-displayForecast();
