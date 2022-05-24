@@ -118,6 +118,33 @@ function celsiusDegrees(event) {
   celciusButton.classList.add("active");
   fahrenheitButton.classList.remove("active");
 }
+
+// weatherforecast van onderen
+function displayForecast() {
+  let forecastElement = document.querySelector("#weatherForecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["thu", "fri", "sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+    <div class="col-2">
+          <div class="forecast-day">${day}</div>
+            <img 
+            src="" 
+            alt="clear"  
+            id="weatherForecastEmoji" 
+            />
+          <div class="forecast-temperature-minmax">
+            <span class="forecast-temperature-max">22°</span>
+            <span class="forecast-temperature-min">13°</span>
+          </div>
+    </div>`;
+  });
+  forecastHTML = `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // dit is voor Cbuuton
 let celsiusTemprature = "00";
 
