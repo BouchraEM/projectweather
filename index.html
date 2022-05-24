@@ -59,8 +59,32 @@
               <li id="weather-description"></li>
             </ul>
           </div>
+          <!--here starts the temp overview-->
 
-          <div class="WeatherForecast row" id="weatherForecast"></div>
+          <div class="row">
+            <div class="col-6">
+              <div class="emoji-row">
+                <img src="" alt="clear" id="weatherEmoji" />
+                <div class="float-left currentT">
+                  <span class="current-temp active" id="currentTemprature"
+                    ><strong> </strong
+                  ></span>
+                  <span class="unit large" id="buttonCF">
+                    <a href="#" id="buttonC">°C</a> |
+                    <a href="#" id="buttonF">°F</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul class="humWind">
+                <li>Humidity: <span id="humidity"></span></li>
+                <li>Wind: <span id="windSpeed"></span> Km/h</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <div class="WeatherForecast" id="weatherForecast"></div>
         </div>
         <small>
           <a href="https://github.com/BouchraEM/projectweather" target="_blank"
