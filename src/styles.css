@@ -63,13 +63,13 @@ h1 {
 }
 .forecast-day {
   font-size: 20px;
+  opacity: 0.6;
 }
 .forecast-temperature-minmax {
   font-size: 16px;
-  opacity: 0.6;
 }
 .forecast-temperature-min {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .emoji-row .active:hover {
