@@ -47,6 +47,21 @@ h1 {
   font-size: 18px;
   color: gray;
 }
+.WeatherForecast {
+  text-align: center;
+  color: #000;
+}
+.forecast-day {
+  font-size: 20px;
+}
+.forecast-temperature-minmax {
+  font-size: 16px;
+  opacity: 0.6;
+}
+.forecast-temperature-min {
+  opacity: 0.4;
+}
+
 .emoji-row .active:hover {
   text-decoration: none;
 }
