@@ -126,7 +126,7 @@ function celsiusDegrees(event) {
   celciusButton.classList.add("active");
   fahrenheitButton.classList.remove("active");
 }
-
+//days of the weatherpredictions
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -152,8 +152,8 @@ function displayForecast(response) {
             src="http//openweather.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" 
-            alt="clear"  
-            id="weatherForecastEmoji" 
+            alt=""  
+            width="42" 
             />
           <div class="forecast-temperature-minmax">
             <span class="forecast-temperature-max">${Math.round(
