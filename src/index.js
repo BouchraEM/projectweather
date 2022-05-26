@@ -64,6 +64,7 @@ function getForecast(coordinates) {
 }
 
 //for updating the weather results
+
 function showTemprature(response) {
   let temprature = celsiusTemprature;
   let description = response.data.weather[0].description;
@@ -90,9 +91,6 @@ function showTemprature(response) {
   getForecast(response.data.coord);
   //console.log(response);
 }
-
-let city = document.querySelector("#enterCity");
-city.addEventListener("submit", getCity);
 
 // for the position
 function currentPosition(event) {
@@ -183,3 +181,6 @@ celciusButton.addEventListener("click", celsiusDegrees);
 
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", currentPosition);
+
+let city = document.querySelector("#enterCity");
+city.addEventListener("submit", getCity);
