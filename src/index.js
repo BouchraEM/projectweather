@@ -52,7 +52,7 @@ function getCity(event) {
   } else {
     alert("Please typ your city!");
   }
-  let apiKey = "d6bab84013f7f8a5c571bc4c8ee836f6";
+  let apiKey = "df78f2b34a13381e609b320485c79951";
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlCity).then(showTemprature);
 }
@@ -96,7 +96,7 @@ function currentPosition(event) {
 function showPosition(position) {
   let long = position.coords.longitude;
   let lati = position.coords.latitude;
-  let apiKey = "d6bab84013f7f8a5c571bc4c8ee836f6";
+  let apiKey = "df78f2b34a13381e609b320485c79951";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${long}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemprature);
 }
@@ -128,7 +128,7 @@ function formatDay(timestamp) {
 // weatherforecast van onderen
 function displayForecast(response) {
   let forecast = response.data.daily;
-
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weatherForecast");
 
   let forecastHTML = `<div class="row">`;
@@ -161,7 +161,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
-  let apiKey = "d6bab84013f7f8a5c571bc4c8ee836f6";
+  let apiKey = "df78f2b34a13381e609b320485c79951";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).ten(displayForecast);
 }
