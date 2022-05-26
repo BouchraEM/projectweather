@@ -57,6 +57,11 @@ function getCity(event) {
   axios.get(apiUrlCity).then(showTemprature);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "d6bab84013f7f8a5c571bc4c8ee836f6";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+}
+
 //for updating the weather results
 function showTemprature(response) {
   let temprature = celsiusTemprature;
@@ -80,7 +85,8 @@ function showTemprature(response) {
   searchedCity.innerHTML = cityResult;
   humidityElement.innerHTML = `${humidity}%`;
   windElement.innerHTML = `${wind} `;
-  displayForecast();
+
+  getForecast(response.data.coord);
   //console.log(response);
 }
 
