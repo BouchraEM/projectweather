@@ -56,9 +56,58 @@ function getCity(event) {
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlCity).then(showTemprature);
 }
+//days of the weatherpredictions
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+// weatherforecast van onderen
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#weatherForecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
+    <div class="col-2">
+          <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
+            <img 
+            src="http//openweather.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" 
+            alt=""  
+            width="42" 
+            />
+          <div class="forecast-temperature-minmax">
+            <span class="forecast-temperature-max">${Math.round(
+              forecastDay.temp.max
+            )}°</span>
+            <span class="forecast-temperature-min">${Math.round(
+              forecastDay.temp.min
+            )}°</span>
+          </div>
+    </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//coordinates for weatherpredictions
+function getForecast(coordinates) {
+  let apiKey = "df78f2b34a13381e609b320485c79951";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).ten(displayForecast);
+}
 
 //for updating the weather results
-
 function showTemprature(response) {
   let temprature = celsiusTemprature;
   let description = response.data.weather[0].description;
@@ -117,54 +166,7 @@ function celsiusDegrees(event) {
   celciusButton.classList.add("active");
   fahrenheitButton.classList.remove("active");
 }
-//days of the weatherpredictions
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  return days[day];
-}
-// weatherforecast van onderen
-function displayForecast(response) {
-  let forecast = response.data.daily;
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#weatherForecast");
-
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        ` 
-    <div class="col-2">
-          <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
-            <img 
-            src="http//openweather.org/img/wn/${
-              forecastDay.weather[0].icon
-            }@2x.png" 
-            alt=""  
-            width="42" 
-            />
-          <div class="forecast-temperature-minmax">
-            <span class="forecast-temperature-max">${Math.round(
-              forecastDay.temp.max
-            )}°</span>
-            <span class="forecast-temperature-min">${Math.round(
-              forecastDay.temp.min
-            )}°</span>
-          </div>
-    </div>`;
-    }
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-function getForecast(coordinates) {
-  let apiKey = "df78f2b34a13381e609b320485c79951";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).ten(displayForecast);
-}
 // dit is voor Cbuuton
 let celsiusTemprature = "00";
 
