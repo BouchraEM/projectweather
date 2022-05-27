@@ -52,7 +52,7 @@ function getCity(event) {
   } else {
     alert("Please typ your city!");
   }
-  let apiKey = "df78f2b34a13381e609b320485c79951";
+  let apiKey = "ed73b828bbe4c27da2ae441fee9379f7";
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=metric`;
   axios.get(apiUrlCity).then(showTemprature);
 }
@@ -101,9 +101,9 @@ function displayForecast(response) {
 
 //coordinates for weatherpredictions
 function getForecast(coordinates) {
-  let apiKey = "df78f2b34a13381e609b320485c79951";
+  let apiKey = "ed73b828bbe4c27da2ae441fee9379f7";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).ten(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //for updating the weather results
@@ -144,7 +144,7 @@ function currentPosition(event) {
 function showPosition(position) {
   let long = position.coords.longitude;
   let lati = position.coords.latitude;
-  let apiKey = "df78f2b34a13381e609b320485c79951";
+  let apiKey = "ed73b828bbe4c27da2ae441fee9379f7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${long}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemprature);
 }
