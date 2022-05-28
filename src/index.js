@@ -77,11 +77,11 @@ function displayForecast(response) {
         ` 
     <div class="col-2">
           <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
-            <img 
+          <img 
             src="http://openweather.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" 
-            alt=""  
+            alt=" "  
             width="42" 
             />
           <div class="forecast-temperature-minmax">
@@ -108,12 +108,12 @@ function getForecast(coordinates) {
 
 //for updating the weather results
 function showTemprature(response) {
-  let temprature = celsiusTemprature;
   let description = response.data.weather[0].description;
   let cityResult = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   celsiusTemprature = Math.round(response.data.main.temp);
+  let temprature = celsiusTemprature;
   let searchedCity = document.querySelector("#runCity");
   let descriptionElement = document.querySelector("#weather-description");
   let tempratureElement = document.querySelector("#currentTemprature");
