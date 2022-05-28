@@ -85,8 +85,3 @@ h1 {
 .emoji-row .active:hover {
   text-decoration: none;
 }
-
-#current-location {
-  width: 100px;
-  background-color: transparent;
-}
