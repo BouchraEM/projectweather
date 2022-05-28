@@ -1,16 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #dd5e89; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f7bb97,
-    #dd5e89
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f7bb97,
-    #dd5e89
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: url("../images/Wolken-blog.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 ul {
   padding: 0;
@@ -25,22 +16,40 @@ h1 {
   font-weight: bold;
   color: black;
 }
+.container {
+  margin: 0;
+  padding: 0;
+}
 .weather-app-wrapper {
+  display: block;
   max-width: 600px;
   margin: 30px auto;
+  padding: 0;
+  border: 3px solid #dadde1;
+  background: #dd5e89; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f7bb97,
+    #dd5e89
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f7bb97,
+    #dd5e89
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
 }
 
 .weather-app {
   padding: 20px;
-  border: 1px solid #dadde1;
   border-radius: 10px;
-  background-color: #fff;
 }
 
 .overview {
   font-family: monospace;
   font-size: 18px;
-  color: gray;
+  color: black;
+  opacity: 0.7;
 }
 .current-temp {
   font-size: 50px;
@@ -55,7 +64,8 @@ h1 {
 .humWind {
   font-family: monospace;
   font-size: 18px;
-  color: gray;
+  color: black;
+  opacity: 0.7;
 }
 .WeatherForecast {
   text-align: center;
@@ -63,7 +73,7 @@ h1 {
 }
 .forecast-day {
   font-size: 20px;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .forecast-temperature-minmax {
   font-size: 16px;
@@ -74,4 +84,9 @@ h1 {
 
 .emoji-row .active:hover {
   text-decoration: none;
+}
+
+#current-location {
+  width: 100px;
+  background-color: transparent;
 }
